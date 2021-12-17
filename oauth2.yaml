@@ -1,0 +1,22 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: oauth2
+spec:
+  type: middleware.http.oauth2
+  version: v1
+  metadata:
+  - name: clientId
+    value: 1034695582454-rsdso5dlcla41tpdittmfr4vo01i90cl.apps.googleusercontent.com
+  - name: clientSecret
+    value: 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
+  - name: scopes
+    value: "https://www.googleapis.com/auth/userinfo.email"
+  - name: authURL
+    value: "https://accounts.google.com/o/oauth2/v2/auth"
+  - name: tokenURL
+    value: "https://accounts.google.com/o/oauth2/token"
+  - name: redirectURL
+    value: "http://localhost:3500/v1.0/invoke/nodeapp/method/echo?text=hello"
+  - name: authHeaderName
+    value: "authorization"
